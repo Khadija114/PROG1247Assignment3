@@ -1,0 +1,183 @@
+<!-- Name: Khadija Rehman -->
+<!-- Student Number: 8832630 -->
+<!-- Course Name: IT Support Web Foundation -->
+<!-- Course Code: PROG1247 -->
+<!-- Date of Submission: 25 March 2023 -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Event Tickets Order Form</title>
+		<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">		
+	</head>
+
+	<body>
+		<div id="frame">
+			<header>
+				<img src="images/ornament-logo.png" alt="New Year Central Logo" style="width: 400px;">
+				<div id="header-line-1">New Year Central</div>
+				<div id="header-line-2">For the child in all of us!</div>
+			</header>
+
+			<!-- navigation starts -->
+			<nav id="nav_menu">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about_us.html">About Us</a></li>
+					<li><a href="products.html">Our Products</a></li>
+					<li><a href="tickets_order_form.html" class="current">Event Tickets</a></li>
+					<li><a href="contact_us.html">Contact Us</a></li>
+				</ul>
+			</nav>
+
+			<aside>
+				<div class="sidebar-title">Products of The Week...</div>
+				<ul>
+					<li><a href="assets/products/berry-garland.html">Natural Holly Berry Garland, 5f - $74.99</a></li>
+					<li><a href="assets/products/artificial-red-berry-garland.html">Artificial Red Berry and White Edge Holly Leaf Christmas Garland, 5.5f - $38.99</a></li>
+					<li><a href="assets/products/christmas-berries-stems.html">Christmas Berries Red Stems Evergreen Pine Branches, 8pcs - $15.99</a></li>
+				</ul>
+			</aside>
+			
+			<main>
+				<h1>Order Event Tickets</h1>
+				<!-- The form starts here... -->
+				<form name="order_form" method="post" action="place_order.html">
+				<fieldset>
+					<!-- Fieldset for grouping Member information -->
+					<!-- Legend with name Memeber Information is used as an this fieldset heading  -->
+
+					<legend>Member Information</legend> 
+					<label for ="email">E-Mail: </label>
+
+					<!-- autoocus is used so taht  -->
+					<!-- input is used to take somevalue from the user. -->
+					<!-- type is an attribute used for specifying the inout type required -->
+					<!-- label is used to define label for inout element-->
+					<!-- required is used make sure that teh field is being filled by the user  -->
+					<!--  -->
+
+					<input type="text" name="email" id="email" autofocus pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter your email in the format: abc@gmail.com" valid><br>
+					<label for ="fname">First Name: </label>
+					<input type="text" name="fname" id="fname" required><br>
+					<label for ="lname">Last Name: </label>
+					<input type="text" name="lname" id="=lname" required><br>
+					<label for ="address">Address: </label>
+					<input type="text" name="address" id="address" valid><br>
+					<label for ="city">City: </label>
+					<input type="text" name="city" id="city" required><br>
+					<label for ="province">Province: </label>
+					<!-- pattern is a collection of characters used for validatiing purposes. teh user entered value should match this pattern -->
+					<!-- place holders are used to dispaly the expected value from user -->
+					<input type="text" name="province" id="province"  pattern="{A-Za-z}{2}" title="Enter your 2-character province code" placeholder= "2-character code" required><br>
+					<label for ="postalcode">Postal Code: </label>
+					<input type="text" name="postalcode" id="postalcode" pattern="[A-Za-z0-9]{6}" title="Enter your 6-characters postal code" placeholder="6 characters" required><br>
+					<label for ="phonenumber">Phone Number: </label>
+					<input type="text" name="phonenumber" id="phonenumber" pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Enter your phone number in the format: 999-999-9999" placeholder= "999-999-9999" valid><br>
+				</fieldset>
+				<fieldset>
+					<!-- Fieldset for grouping ordering information -->
+					<!-- Legend with name Ordering Information is used as an this fieldset heading  -->
+
+					<legend>Ordering Information</legend>
+					<label>Event: </label>
+					<!-- select and option is used to enable user select from the options in drop down menu. Here user will select an even type  -->
+					<select name="Event" valid>
+						<option value="Cookie Decoration Contest">Cookie Decoration Contest</option>
+						<option value="Tree Decoration Contest">Tree Decoration Contest</option>
+						<option value="Gift of Light Ride-Along">Gift of Light Ride-Along</option>
+						<option value="Breakfast with Santa">Breakfast with Santa</option>
+					</select>
+					<br>
+					<label>Order Type: </label>
+					<!-- select and option is used to enable user select from the options in drop down menu -->
+					<select name="Order Type" valid>
+						<option value="Member Package">Member Package</option>
+						<option value="Donor Package">Donor Package</option>
+						<option value="Single Tickets">Single Tickets</option>
+					</select>
+					<br>
+					<label for="no_of_tickets">Number of Tickets: </label>
+					<input type="digit" name="noofticktes" id="no_of_tickets" title="Number of tickets" placeholder="Number of single tickets" valid>
+				</fieldset>
+				<fieldset>
+					<!-- Fieldset for grouping Payment method inputs -->
+					<!-- Legend with name Payment Metjod is used as an this fieldset heading  -->
+
+					<legend>Payment Method</legend>
+					<!-- A radio button is used for user selection purposes, the display anme is Bill Me -->
+					<label for="bill me" class="radio-inline" id="label1">
+					<input type="radio" id="bill me" name="payment method" valid> Bill Me
+					</label>
+					<!-- A radio button is used for user selection purposes, the display anme is Credit Card -->
+					<label for="credit" class="radio-inline">
+					<input type="radio" id="credit" name="payment method" valid> Credit Card
+					</label>
+					
+				</fieldset>
+				<fieldset>
+					<!-- Fieldset for grouping credit card information -->
+					<!-- Legend with name Credit Card Information is used as an this fieldset heading  -->
+
+					<legend>Credit Card Information</legend>
+					<label for="card type">Card Type: </label>
+					<!-- select and option is used to enable user select from the options in drop down menu. Here user will select card type -->
+					<select name="card type" valid>
+						<option value="Visa">Visa</option>
+						<option value="Master Card">Master Card</option>
+						<option value="Discover">Discover</option>
+					</select>
+					<br>
+					<label for="card number">Card Number: </label>
+					<input type="text" id="card number" name="card number" pattern="^\d{4}-\d{4}-\d{4}-\d{4}$" title="enter your 16-digits credit number" placeholder="16 digits" required><br>
+					<label for="expiry">Expiration Date: </label>
+					<!-- select and option is used to enable user select from the options in drop down menu. Here user will select year month name -->
+					<select name="month" id="month" valid>
+						<option value="January">January</option>
+						<option value="Feb">February</option>
+						<option value="March">March</option>
+						<option value="April">April</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+						<option value="Aug">August</option>
+						<option value="Sept">September</option>
+						<option value="Oct">October</option>
+						<option value="Nov">November</option>
+						<option value="Dec">December</option>
+					</select>
+					<!-- select and option is used to enable user select from the options in drop down menu. Here user will select a year between 2021 to 2027 -->
+					<select name="year" id="year" valid>
+						<option value="2021">2021</option> 
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+						<option value="2025">2025</option>
+						<option value="2026">2026</option>
+						<option value="2027">2027</option>
+
+					</select>
+				</fieldset>
+				<fieldset>
+					<!-- Fieldset for grouping submiision order information -->
+					<!-- Legend with name Submit Your Order is used as an this fieldset heading  -->
+
+					<!-- submit and reset are builtin inout types -->
+					<legend>Submit Your Order</legend>
+					<input type="submit" name="submit" id="submit" value="submit">
+					<input type="reset" name="reset" id="reset" value="reset fields">
+				</fieldset>
+				<!-- form closing tag -->
+				</form>
+			<!-- main closing tag  -->
+			</main>
+			
+			<footer>
+				<p>&copy; 2021 New Year Central. Created by Johnny White.</p>
+			</footer>
+		</div>
+	</body>
+</html>
+
